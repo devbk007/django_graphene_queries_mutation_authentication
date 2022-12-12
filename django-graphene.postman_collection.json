@@ -1,0 +1,1687 @@
+{
+	"info": {
+		"_postman_id": "6d2f3806-a21a-4132-b8b1-d14eb5c10eaf",
+		"name": "django-graphene",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24212339"
+	},
+	"item": [
+		{
+			"name": "queries-mutation-authentication",
+			"item": [
+				{
+					"name": "JWT Authentication",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n  tokenAuth(username:\"baizel\", password:\"baizel\") {\r\n      token\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "JWT Authentication",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation{\r\n  tokenAuth(username:\"baizel\", password:\"baizel\") {\r\n      token\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 03 Nov 2022 15:16:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "195"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=SMAZh7Fo1mbW7x7LfJLorBSoxZdM6LtvNaPKoDXk2bnaQoqAmPKRkPpp14sab6pi; expires=Thu, 02 Nov 2023 15:16:24 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"tokenAuth\": {\n            \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY2NzQ4ODg4NCwib3JpZ0lhdCI6MTY2NzQ4ODU4NH0.I5dWIQC7fg_LHy2sKI3OpNRqwWB4MbJlt0c60X9I7Ok\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "JWT VerifyToken",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation VerifyToken($token: String!) {\r\n  verifyToken(token : $token) {\r\n      payload\r\n  }\r\n}",
+								"variables": "{\r\n    \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY2NzQ5NTU2NCwib3JpZ0lhdCI6MTY2NzQ5NTUwNH0.uqnNv7f5A4hsHUgL1ZSbVmW_IDsFSm8pFglddin1Q9s\"\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "JWT VerifyToken",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation VerifyToken($token: String!) {\r\n  verifyToken(token : $token) {\r\n      payload\r\n  }\r\n}",
+										"variables": "{\r\n    \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY2NzQ5NTE0NCwib3JpZ0lhdCI6MTY2NzQ5NTA4NH0.TAmPsaTkhxzdd40cnET-zjfM565onQfs3Ey-MZXfAD0\"\r\n}"
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 03 Nov 2022 17:05:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "96"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=SMAZh7Fo1mbW7x7LfJLorBSoxZdM6LtvNaPKoDXk2bnaQoqAmPKRkPpp14sab6pi; expires=Thu, 02 Nov 2023 17:05:01 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"verifyToken\": {\n            \"payload\": {\n                \"username\": \"baizel\",\n                \"exp\": 1667495144,\n                \"origIat\": 1667495084\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "JWT Referesh Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation RefreshToken($token: String!) {\r\n  refreshToken(token: $token) {\r\n    token\r\n    payload\r\n    refreshExpiresIn\r\n  }\r\n}",
+								"variables": "{\r\n    \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY2NzQ5NTU2NCwib3JpZ0lhdCI6MTY2NzQ5NTUwNH0.uqnNv7f5A4hsHUgL1ZSbVmW_IDsFSm8pFglddin1Q9s\"\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "JWT Referesh Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation RefreshToken($token: String!) {\r\n  refreshToken(token: $token) {\r\n    token\r\n    payload\r\n    refreshExpiresIn\r\n  }\r\n}",
+										"variables": "{\r\n    \"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY2NzQ5NTE0NCwib3JpZ0lhdCI6MTY2NzQ5NTA4NH0.TAmPsaTkhxzdd40cnET-zjfM565onQfs3Ey-MZXfAD0\"\r\n}"
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 03 Nov 2022 17:05:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "298"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=SMAZh7Fo1mbW7x7LfJLorBSoxZdM6LtvNaPKoDXk2bnaQoqAmPKRkPpp14sab6pi; expires=Thu, 02 Nov 2023 17:05:24 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"refreshToken\": {\n            \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY2NzQ5NTE4NCwib3JpZ0lhdCI6MTY2NzQ5NTA4NH0.1moZ9Q0jbWvlmKTACaKTKM_el3nhYsUS718I7ARtqT8\",\n            \"payload\": {\n                \"username\": \"baizel\",\n                \"exp\": 1667495184,\n                \"origIat\": 1667495084\n            },\n            \"refreshExpiresIn\": 1668099884\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "All movies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg2MDU1Miwib3JpZ0lhdCI6MTY3MDg1OTk1Mn0.6nYejrPYMAUDlyxh7_l-YLb3AqZ1RMUWw9bBIweamYU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query AllMovies{\r\n  allMovies{\r\n    ...movieData\r\n  }\r\n}\r\n\r\nfragment movieData on MovieType{\r\n  \tid\r\n    title\r\n    date\r\n    movieAge\r\n    director {\r\n      id\r\n      name\r\n      surname\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Expired access token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY2NzQ5NDkxNSwib3JpZ0lhdCI6MTY2NzQ5NDg1NX0.Enfybxlmus-S9bVj2CylvP9dcEHgcwMNxqvoK-0LWr8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query AllMovies{\r\n  allMovies{\r\n    ...movieData\r\n  }\r\n}\r\n\r\nfragment movieData on MovieType{\r\n  \tid\r\n    title\r\n    date\r\n    movieAge\r\n    director {\r\n      id\r\n      name\r\n      surname\r\n    }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 03 Nov 2022 17:02:23 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "131"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=SMAZh7Fo1mbW7x7LfJLorBSoxZdM6LtvNaPKoDXk2bnaQoqAmPKRkPpp14sab6pi; expires=Thu, 02 Nov 2023 17:02:23 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"message\": \"Signature has expired\",\n            \"locations\": [\n                {\n                    \"line\": 2,\n                    \"column\": 3\n                }\n            ],\n            \"path\": [\n                \"allMovies\"\n            ]\n        }\n    ],\n    \"data\": {\n        \"allMovies\": null\n    }\n}"
+						},
+						{
+							"name": "All movies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg1NDcyMSwib3JpZ0lhdCI6MTY3MDg1NDEyMX0.EjLcpr-VPfJisEj1OCQK5D7UCCWlxWTk1th08KUgV3g",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query AllMovies{\r\n  allMovies{\r\n    ...movieData\r\n  }\r\n}\r\n\r\nfragment movieData on MovieType{\r\n  \tid\r\n    title\r\n    date\r\n    movieAge\r\n    director {\r\n      id\r\n      name\r\n      surname\r\n    }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 12 Dec 2022 14:17:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "182"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=MRCvHh9n9StjN4Fnv47VYDcZvHPxgtoeLsMKm0sRnOyg84oFIwWxq89b5v01ask0; expires=Mon, 11 Dec 2023 14:17:55 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"allMovies\": [\n            {\n                \"id\": \"1\",\n                \"title\": \"Test 1\",\n                \"date\": 2022,\n                \"movieAge\": \"New Movie\",\n                \"director\": null\n            },\n            {\n                \"id\": \"3\",\n                \"title\": \"Test 3\",\n                \"date\": 1998,\n                \"movieAge\": \"Old Movie\",\n                \"director\": null\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "All directors",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg2MTE4OSwib3JpZ0lhdCI6MTY3MDg2MDU4OX0._nAuZZX5WTylZPP9afghIDXUcMHzfeoUHs0GE6ieB-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query AllDirectors{\r\n  allDirectors {\r\n    ...directorData\r\n  }\r\n}\r\n\r\nfragment directorData on DirectorType{\r\n  id\r\n  name\r\n  surname\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All directors",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg2MDM3Miwib3JpZ0lhdCI6MTY3MDg1OTc3Mn0.RFXpEZn7Xj0Nx1jmGwvfKGig-_PpdGLGhq4b5V_3Jok",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query AllDirectors{\r\n  allDirectors {\r\n    ...directorData\r\n  }\r\n}\r\n\r\nfragment directorData on DirectorType{\r\n  id\r\n  name\r\n  surname\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 12 Dec 2022 15:43:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=MRCvHh9n9StjN4Fnv47VYDcZvHPxgtoeLsMKm0sRnOyg84oFIwWxq89b5v01ask0; expires=Mon, 11 Dec 2023 15:43:32 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"allDirectors\": [\n            {\n                \"id\": \"1\",\n                \"name\": \"Saubin\",\n                \"surname\": \"Shahir\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Single Movie",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg1NDcyMSwib3JpZ0lhdCI6MTY3MDg1NDEyMX0.EjLcpr-VPfJisEj1OCQK5D7UCCWlxWTk1th08KUgV3g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query oneMovie($id: Int, $showdirector:Boolean = false){\r\n  movie(id:$id) {\r\n    id\r\n    title\r\n    date\r\n    movieAge\r\n    director @include(if: $showdirector) {\r\n      id\r\n      name\r\n      surname\r\n    }\r\n  }\r\n}",
+								"variables": "{\r\n  \"id\":5,\r\n  \"showdirector\": true\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Single Movie",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query oneMovie($id: Int, $showdirector:Boolean = false){\r\n  movie(id:$id) {\r\n    id\r\n    title\r\n    date\r\n    movieAge\r\n    director @include(if: $showdirector) {\r\n      id\r\n      name\r\n      surname\r\n    }\r\n  }\r\n}",
+										"variables": "{\r\n  \"id\":5,\r\n  \"showdirector\": true\r\n}"
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 04 Nov 2022 12:52:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "144"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=SMAZh7Fo1mbW7x7LfJLorBSoxZdM6LtvNaPKoDXk2bnaQoqAmPKRkPpp14sab6pi; expires=Fri, 03 Nov 2023 12:52:10 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"movie\": {\n            \"id\": \"5\",\n            \"title\": \"Kalyana Raman\",\n            \"date\": 1998,\n            \"movieAge\": \"Old Movie\",\n            \"director\": {\n                \"id\": \"4\",\n                \"name\": \"Actor\",\n                \"surname\": \"Dileep\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Single Director",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg2MDM3Miwib3JpZ0lhdCI6MTY3MDg1OTc3Mn0.RFXpEZn7Xj0Nx1jmGwvfKGig-_PpdGLGhq4b5V_3Jok",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query oneDirector($id: Int){\r\n  director(id: $id) {\r\n    ...directorData\r\n  }\r\n}\r\n\r\nfragment directorData on DirectorType{\r\n  id\r\n  name\r\n  surname\r\n}",
+								"variables": "{\r\n  \"id\":1\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Single Director",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg2MDM3Miwib3JpZ0lhdCI6MTY3MDg1OTc3Mn0.RFXpEZn7Xj0Nx1jmGwvfKGig-_PpdGLGhq4b5V_3Jok",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query oneDirector($id: Int){\r\n  director(id: $id) {\r\n    ...directorData\r\n  }\r\n}\r\n\r\nfragment directorData on DirectorType{\r\n  id\r\n  name\r\n  surname\r\n}",
+										"variables": "{\r\n  \"id\":1\r\n}"
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 12 Dec 2022 15:44:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=MRCvHh9n9StjN4Fnv47VYDcZvHPxgtoeLsMKm0sRnOyg84oFIwWxq89b5v01ask0; expires=Mon, 11 Dec 2023 15:44:01 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"director\": {\n            \"id\": \"1\",\n            \"name\": \"Saubin\",\n            \"surname\": \"Shahir\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Movie and Directors",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg1NDcyMSwib3JpZ0lhdCI6MTY3MDg1NDEyMX0.EjLcpr-VPfJisEj1OCQK5D7UCCWlxWTk1th08KUgV3g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query MoviesAndDirectors {\r\n  allMovies {\r\n    ...movieData\r\n  }\r\n  \r\n  allDirectors {\r\n      ...directorData\r\n  }\r\n  \r\n}\r\nfragment movieData on MovieType{\r\n  \tid\r\n    title\r\n    date\r\n    movieAge\r\n    director {\r\n      id\r\n      name\r\n      surname\r\n    }\r\n}\r\n\r\nfragment directorData on DirectorType{\r\n  id\r\n  name\r\n  surname\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Director",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg2MTE4OSwib3JpZ0lhdCI6MTY3MDg2MDU4OX0._nAuZZX5WTylZPP9afghIDXUcMHzfeoUHs0GE6ieB-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n  createDirector(name: \"Basil\", surname: \"Joseph\") {\r\n    director {\r\n      id\r\n      name\r\n      surname\r\n    }\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Director",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg2MDM3Miwib3JpZ0lhdCI6MTY3MDg1OTc3Mn0.RFXpEZn7Xj0Nx1jmGwvfKGig-_PpdGLGhq4b5V_3Jok",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation {\r\n  createDirector(name: \"Saubin\", surname: \"Shahir\") {\r\n    director {\r\n      id\r\n      name\r\n      surname\r\n    }\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 12 Dec 2022 15:43:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=MRCvHh9n9StjN4Fnv47VYDcZvHPxgtoeLsMKm0sRnOyg84oFIwWxq89b5v01ask0; expires=Mon, 11 Dec 2023 15:43:04 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"createDirector\": {\n            \"director\": {\n                \"id\": \"1\",\n                \"name\": \"Saubin\",\n                \"surname\": \"Shahir\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Director",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg2MTE4OSwib3JpZ0lhdCI6MTY3MDg2MDU4OX0._nAuZZX5WTylZPP9afghIDXUcMHzfeoUHs0GE6ieB-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n  updateDirector(name: \"Baizel\", surname: \"Joseph\", id:2) {\r\n    director {\r\n      id\r\n      name\r\n      surname\r\n    }\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Director",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg2MTE4OSwib3JpZ0lhdCI6MTY3MDg2MDU4OX0._nAuZZX5WTylZPP9afghIDXUcMHzfeoUHs0GE6ieB-8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation {\r\n  updateDirector(name: \"Bael\", surname: \"Joseph\", id:2) {\r\n    director {\r\n      id\r\n      name\r\n      surname\r\n    }\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 12 Dec 2022 15:57:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=MRCvHh9n9StjN4Fnv47VYDcZvHPxgtoeLsMKm0sRnOyg84oFIwWxq89b5v01ask0; expires=Mon, 11 Dec 2023 15:57:34 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"updateDirector\": {\n            \"director\": {\n                \"id\": \"2\",\n                \"name\": \"Baizel\",\n                \"surname\": \"Joseph\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Director",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg2MTE4OSwib3JpZ0lhdCI6MTY3MDg2MDU4OX0._nAuZZX5WTylZPP9afghIDXUcMHzfeoUHs0GE6ieB-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n  deleteDirector(id:2) {\r\n    director {\r\n      id\r\n      name\r\n      surname\r\n    }\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Director",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg2MTE4OSwib3JpZ0lhdCI6MTY3MDg2MDU4OX0._nAuZZX5WTylZPP9afghIDXUcMHzfeoUHs0GE6ieB-8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation{\r\n  deleteDirector(id:2) {\r\n    director {\r\n      id\r\n      name\r\n      surname\r\n    }\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 12 Dec 2022 15:58:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=MRCvHh9n9StjN4Fnv47VYDcZvHPxgtoeLsMKm0sRnOyg84oFIwWxq89b5v01ask0; expires=Mon, 11 Dec 2023 15:58:16 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"deleteDirector\": {\n            \"director\": null\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg2MDU1Miwib3JpZ0lhdCI6MTY3MDg1OTk1Mn0.6nYejrPYMAUDlyxh7_l-YLb3AqZ1RMUWw9bBIweamYU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n  createMovie(title: \"Test 2\", date: 1998, directorId: 1) {\r\n    movie {\r\n      id\r\n      title\r\n      date\r\n      director {\r\n          id\r\n          name\r\n          surname\r\n      }\r\n    }\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Movie withour director",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg1NDk2Niwib3JpZ0lhdCI6MTY3MDg1NDM2Nn0.hV9vLSF4MTqw-Yr0gha2kQFY0Bjmnm1WeBfE-d24g-0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation {\r\n  createMovie(title: \"Test1\", date: 2010) {\r\n    movie {\r\n      id\r\n      title\r\n      date\r\n    }\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 12 Dec 2022 14:14:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=MRCvHh9n9StjN4Fnv47VYDcZvHPxgtoeLsMKm0sRnOyg84oFIwWxq89b5v01ask0; expires=Mon, 11 Dec 2023 14:14:18 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"createMovie\": {\n            \"movie\": {\n                \"id\": \"1\",\n                \"title\": \"Test1\",\n                \"date\": 2010\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "Create Movie with Director",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg2MDU1Miwib3JpZ0lhdCI6MTY3MDg1OTk1Mn0.6nYejrPYMAUDlyxh7_l-YLb3AqZ1RMUWw9bBIweamYU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation {\r\n  createMovie(title: \"Test 2\", date: 1998, directorId: 1) {\r\n    movie {\r\n      id\r\n      title\r\n      date\r\n      director {\r\n          id\r\n          name\r\n          surname\r\n      }\r\n    }\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 12 Dec 2022 15:46:05 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "131"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=MRCvHh9n9StjN4Fnv47VYDcZvHPxgtoeLsMKm0sRnOyg84oFIwWxq89b5v01ask0; expires=Mon, 11 Dec 2023 15:46:05 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"createMovie\": {\n            \"movie\": {\n                \"id\": \"4\",\n                \"title\": \"Test 2\",\n                \"date\": 1998,\n                \"director\": {\n                    \"id\": \"1\",\n                    \"name\": \"Saubin\",\n                    \"surname\": \"Shahir\"\n                }\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg1NDk2Niwib3JpZ0lhdCI6MTY3MDg1NDM2Nn0.hV9vLSF4MTqw-Yr0gha2kQFY0Bjmnm1WeBfE-d24g-0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n  updateMovie(title: \"Test 1\", date: 2022, id:1) {\r\n    movie {\r\n      id\r\n      title\r\n      date\r\n    }\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Movie",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg1NDk2Niwib3JpZ0lhdCI6MTY3MDg1NDM2Nn0.hV9vLSF4MTqw-Yr0gha2kQFY0Bjmnm1WeBfE-d24g-0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation {\r\n  updateMovie(title: \"Test 1\", date: 2022, id:1) {\r\n    movie {\r\n      id\r\n      title\r\n      date\r\n    }\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 12 Dec 2022 14:16:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=MRCvHh9n9StjN4Fnv47VYDcZvHPxgtoeLsMKm0sRnOyg84oFIwWxq89b5v01ask0; expires=Mon, 11 Dec 2023 14:16:03 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"updateMovie\": {\n            \"movie\": {\n                \"id\": \"1\",\n                \"title\": \"Test 1\",\n                \"date\": 2022\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg1NDk2Niwib3JpZ0lhdCI6MTY3MDg1NDM2Nn0.hV9vLSF4MTqw-Yr0gha2kQFY0Bjmnm1WeBfE-d24g-0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n  deleteMovie(id:2) {\r\n    movie {\r\n      id\r\n      title\r\n      date\r\n    }\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/graphql/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"graphql",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Movie",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImJhaXplbCIsImV4cCI6MTY3MDg1NDk2Niwib3JpZ0lhdCI6MTY3MDg1NDM2Nn0.hV9vLSF4MTqw-Yr0gha2kQFY0Bjmnm1WeBfE-d24g-0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation{\r\n  deleteMovie(id:2) {\r\n    movie {\r\n      id\r\n      title\r\n      date\r\n    }\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/graphql/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"graphql",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 12 Dec 2022 14:17:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=MRCvHh9n9StjN4Fnv47VYDcZvHPxgtoeLsMKm0sRnOyg84oFIwWxq89b5v01ask0; expires=Mon, 11 Dec 2023 14:17:04 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"deleteMovie\": {\n            \"movie\": null\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
