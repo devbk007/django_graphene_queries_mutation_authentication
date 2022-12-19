@@ -1,5 +1,15 @@
 GraphQL APIs for adding, deleting and updating movie and director details. Every API is authenticated using JWT.
 
+# Operations handled by APIs
+1. Add, Update, Delete and Read details of a single director.
+2. Add, Update, Delete and Read details of a single movie.
+3. Read details of all movies.
+4. Read details of all directors.
+5. Read details of all movies and directors.
+6. User login.
+7. JWT token verification.
+8. JWT token refresh
+
 # Steps to install application
 1. Install packages    
     ```
